@@ -20,10 +20,8 @@ long roadsAndLibraries(int n, int c_lib, int c_road, vector<vector<int>> cities)
     
     for(int i=0; i<cities.size();i++)
     {   
-        int f=cities[i][0];
-        int e=cities[i][1];
-        adj[f].push_back(cities[i][1]);
-        adj[e].push_back(f);
+        adj[cities[i][0]].push_back(cities[i][1]);
+        adj[cities[i][1]].push_back(cities[i][0]);
     }
     if (c_lib<c_road) return c_lib*n;
     else {
